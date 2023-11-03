@@ -1,0 +1,5 @@
+#!/bin/bash
+# Script to disable compositor before steam game launch.
+
+nvidia-settings -a CurrentMetaMode="1920x1080_120 +0+0 { ForceCompositionPipeline=Off,  ForceFullCompositionPipeline=Off,   AllowGSYNCCompatible=On }" &
+exec "$@"

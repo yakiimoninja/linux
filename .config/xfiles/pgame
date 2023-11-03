@@ -1,0 +1,10 @@
+#!/bin/bash
+
+game_path="$1" 
+
+nvidia-settings -a CurrentMetaMode="1920x1080_120 +0+0 { ForceCompositionPipeline=Off, ForceFullCompositionPipeline=Off, AllowGSYNCCompatible=On }" &
+
+./"$game_path"
+
+nvidia-settings -a CurrentMetaMode="1920x1080_120 +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On, AllowGSYNCCompatible=On }"
+dunstify "Game Mode" "Compositor On"

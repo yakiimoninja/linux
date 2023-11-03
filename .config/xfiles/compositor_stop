@@ -1,0 +1,5 @@
+#!/bin/bash
+# Script to enable compositor after steam game close
+
+nvidia-settings -a CurrentMetaMode="1920x1080_120 +0+0 { ForceCompositionPipeline=On,   ForceFullCompositionPipeline=On,    AllowGSYNCCompatible=On }"
+dunstify PotatoMode "Compositor On"
