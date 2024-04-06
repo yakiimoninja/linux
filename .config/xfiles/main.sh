@@ -48,11 +48,6 @@ if [[ ! -d "$HOME/code" && ! -d "$HOME/Code" ]]; then
 else
     echo "Code folder exists."
 fi
-
-# Getting linux OS
-OS=$(hostnamectl | grep "Operating System:" | sed "s/Operating System: //")
-echo ""
-echo $OS
     
 # Setting volume
 echo ""
