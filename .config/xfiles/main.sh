@@ -130,12 +130,25 @@ if [[ $input == "Y" || $input == "y" ]]; then
     sudo cp $HOME/.config/xfiles/00-keyboard.conf /etc/X11/xorg.conf.d/
     sudo cp $HOME/.config/xfiles/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
     sudo cp $HOME/.config/xfiles/blacklist.conf /etc/modprobe.d/
-    sudo cp $HOME/.config/xfiles/grub /etc/default/
     sudo cp $HOME/.config/xfiles/xorg.conf /etc/X11/
     sudo cp $HOME/.config/xfiles/sudoers /etc/
     sudo cp $HOME/.config/xfiles/pgame /bin/
     sudo cp $HOME/.config/xfiles/pstart /bin/
     sudo cp $HOME/.config/xfiles/pstop /bin/
+    
+    # Nvidia Hyprland
+    sudo cp $HOME/.config/xfiles/mkinitcpio.conf /etc/mkinitcpio.conf
+    sudo cp $HOME/.config/xfiles/grub /etc/default/
+    sudo cp $HOME/.config/xfiles/nvidia.conf /etc/modprobe.d/nvidia.conf
+
+    echo ""
+    echo "Making grub config."
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    
+    echo ""
+    echo "Making mkinitcpio config."
+    sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
+    
 fi
 
 # Disabling hibernation/sleep etc
