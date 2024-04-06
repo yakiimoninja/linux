@@ -89,7 +89,7 @@ if [[ $input == "Y" || $input == "y" ]]; then
     sudo pacman -Sy --noconfirm hyprland dunst dolphin wofi xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent waybar
 
     # Staple packages
-    sudo pacman -Sy --noconfirm neovim vi bash-completion steam alacritty keepassxc mpv archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji neofetch ranger dunst firefox unrar unzip xz lxappearance ueberzug openssh obs-studio htop p7zip ripgrep fuse lazygit
+    sudo pacman -Sy --noconfirm neovim vi bash-completion steam alacritty keepassxc mpv archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji neofetch ranger dunst firefox unrar unzip xz lxappearance ueberzug openssh obs-studio htop p7zip ripgrep fuse lazygit udiskie
 
     ## AUR packages
     yay -Sy nsxiv game-devices-udev autojump webcord-git hyprshade
