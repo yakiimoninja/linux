@@ -1,4 +1,4 @@
-import = ["/home/potatoninja/.config/alacritty/gruvbox.toml"]
+import = ["/home/potatoninja/.config/alacritty/dracula.toml"]
 
 [font]
 size = 12.0
