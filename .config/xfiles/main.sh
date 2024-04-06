@@ -112,12 +112,6 @@ if [[ $input == "Y" || $input == "y" ]]; then
 
     # Seperate nvim config
     git clone https://github.com/yakiimoninja/nvim $HOME/.config/
-    
-    # Fixing nitrogen bg paths
-    user=$(whoami)
-    sed -i "s/user_name/$user/g" "$HOME//.config/nitrogen/bg-saved.cfg"
-    sed -i "s/user_name/$user/g" "$HOME//.config/nitrogen/nitrogen.cfg"
-    sed -i "s/user_name/$user/g" "$HOME//.gtkrc-2.0"
 fi
 
 # Downloading rust tools
@@ -142,30 +136,6 @@ if [[ $input == "Y" || $input == "y" ]]; then
     sudo cp $HOME/.config/xfiles/pgame /bin/
     sudo cp $HOME/.config/xfiles/pstart /bin/
     sudo cp $HOME/.config/xfiles/pstop /bin/
-fi
-
-# Compiling suckless software
-echo ""
-echo "Compile suckless software? [y/n]"
-read input
-if [[ $input == "Y" || $input == "y" ]]; then
-    # Making reboot and shutdown available from dmenu
-    sudo chmod a+s /sbin/shutdown
-    sudo chmod a+s /sbin/reboot
-    
-    # Removes old dwm config
-    rm $HOME/.config/suckless/dwm/config.h
-
-
-    
-    cd $HOME/.config/suckless/dmenu
-    sudo make clean install $HOME/.config/suckless/dmenu
-    cd $HOME/.config/suckless/dwm
-    sudo make clean install $HOME/.config/suckless/dwm
-    cd $HOME/.config/suckless/slock
-    sudo make clean install $HOME/.config/suckless/slock
-    cd $HOME/.config/suckless/slstatus
-    sudo make clean install $HOME/.config/suckless/slstatus
 fi
 
 # Disabling hibernation/sleep etc
