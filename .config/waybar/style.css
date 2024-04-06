@@ -1,0 +1,97 @@
+* {
+    font-family: "Hack Nerd Font Mono";
+    font-size: 17px;
+    /* font-weight: bold; */
+    border-radius: 1px;
+}
+
+window#waybar {
+    /*background-color: #45403d;*/
+    background-color: #282828;
+    border-radius: 0px;
+}
+
+.modules-right {
+    font-size: 10px;
+    margin-right: 0.5rem;
+}
+.modules-left {
+    margin-left: 0.5rem;
+}
+tooltip {
+    background: #45403d;
+    border-radius: 10px;
+}
+tooltip label {
+    color: #ebdbb2;
+    background-color: #45403d;
+    border-radius: 10px;
+}
+tooltip * {
+    border-radius: 10px;
+}
+#workspaces button {
+    margin: 0;
+    color: #d4be98;
+    font-weight: bolder;
+    font-style: normal;
+    margin: 0.2rem 0.1rem;
+    border-radius: 20px;
+}
+button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: inherit;
+}
+#workspaces button.active {
+    color: #ebdbb2;
+    background-color: #7daea3;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.818);
+    transition: all 0.1s ease-in-out;
+}
+
+#clock,
+#custom-weather {
+    /* This is the clock */
+    font-family: "Hack Nerd Font";
+    font-weight: bolder;
+    color: #d4be98;
+}
+
+#clock {
+    padding: 0 0 0 1.5em;
+}
+
+#memory {
+    color: #a9b665;
+    padding: 0 0.3em;
+}
+
+#pulseaudio {
+    margin: 0;
+    padding: 0 0.5em 0 0.4em;
+    color: #d8a657;
+}
+
+#cpu {
+    margin: 0;
+    padding: 0 0.1em 0 0.1em;
+    color: #a9b665;
+}
+
+#network {
+    margin: 0;
+    padding: 0 0.4em 0 0.5em;
+    color: #d8a657;
+}
+
+#language {
+    margin: 0;
+    padding: 0 0.1em;
+    color: #d3869b;
+}
+#tray {
+    margin: 0;
+    padding: 0 0.2em;
+    color: #d3869b;
+}
