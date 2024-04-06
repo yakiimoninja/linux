@@ -53,53 +53,41 @@ fi
 OS=$(hostnamectl | grep "Operating System:" | sed "s/Operating System: //")
 echo ""
 echo $OS
-
-if [[ $OS == "Arch Linux" ]]; then
     
-    # Setting volume
-    echo ""
-    echo "Set volume to 0.70."
-    wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.70
-    
-    # Setting mirrorlist
-    echo ""
-    echo "Install and sort mirrorlist with reflector? [y/n]"
-    read input
-    if [[ $input == "Y" || $input == "y" ]]; then
-        sudo pacman -Sy reflector --noconfirm
-        sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist --protocol https --download-timeout 15
-    fi
+# Setting volume
+echo ""
+echo "Set volume to 0.70."
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.70
 
-    # Installing AUR and YAY
-    echo ""
-    echo "Enable AUR and download YAY [y/n]"
-    read input
-    if [[ $input == "Y" || $input == "y" ]]; then
-        git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
-        cd /tmp/yay/
-        makepkg -si
-        cd $HOME
-        rm -rf /tmp/yay/
-    fi
+# Setting mirrorlist
+echo ""
+echo "Install and sort mirrorlist with reflector? [y/n]"
+read input
+if [[ $input == "Y" || $input == "y" ]]; then
+    sudo pacman -Sy reflector --noconfirm
+    sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist --protocol https --download-timeout 15
+fi
 
-    # Downloading software
-    echo ""
-    echo "Install packages? [y/n]"
-    read input
-    if [[ $input == "Y" || $input == "y" ]]; then 
-        sudo pacman -Sy --noconfirm neovim vi bash-completion steam alacritty redshift keepassxc mpv xclip archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji neofetch flameshot ranger dunst libxft libxinerama firefox unrar unzip xz lxappearance ueberzug openssh discord obs-studio htop p7zip ripgrep fuse lazygit
-        yay -Sy nsxiv game-devices-udev autojump
-    fi
+# Installing AUR and YAY
+echo ""
+echo "Enable AUR and download YAY [y/n]"
+read input
+if [[ $input == "Y" || $input == "y" ]]; then
+    git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
+    cd /tmp/yay/
+    makepkg -si
+    cd $HOME
+    rm -rf /tmp/yay/
+fi
 
-else
-    # Downloading software for non archlinux
-    echo ""
-    echo "Install packages? [y/n]"
-    read input
-    if [[ $input == "Y" || $input == "y" ]]; then 
-        sudo pacman -Sy --noconfirm neovim vi alacritty redshift steam keepassxc mpv xclip archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji flameshot ranger dunst ueberzug discord obs-studio htop p7zip ripgrep fuse lazygit
-        yay -Sy nsxiv game-devices-udev autojump
-    fi
+# Downloading software
+echo ""
+echo "Install packages? [y/n]"
+read input
+if [[ $input == "Y" || $input == "y" ]]; then 
+    # Xorg packs that may be needed: xlip libxft libxinerama
+    sudo pacman -Sy --noconfirm neovim vi bash-completion steam alacritty redshift keepassxc mpv archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji neofetch flameshot ranger dunst firefox unrar unzip xz lxappearance ueberzug openssh discord obs-studio htop p7zip ripgrep fuse lazygit
+    yay -Sy nsxiv game-devices-udev autojump
 fi
 
 # Recovering files from github
