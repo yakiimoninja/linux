@@ -109,11 +109,11 @@ read input
 if [[ $input == "Y" || $input == "y" ]]; then 
     mkdir $HOME/.dotfiles
     echo ".dotfiles" >> $HOME/.gitignore
-    git clone --bare https://github.com/yakiimoninja/linux $HOME/.dotfiles
+    git clone --bare --branch x11 --single-branch https://github.com/yakiimoninja/linux $HOME/.dotfiles
     rm .bashrc
     rm .bash_profile
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
-    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push --set-upstream origin main
+    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push --set-upstream origin x11
     echo -e "[status]\n\tshowUntrackedFiles = no" >> $HOME/.dotfiles/config
     source $HOME/.bashrc
 
