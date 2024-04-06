@@ -80,7 +80,7 @@ echo ""
 echo "Install packages? [y/n]"
 read input
 if [[ $input == "Y" || $input == "y" ]]; then 
-    # Xorg packages that may be needed: xlip libxft libxinerama flameshot
+    # Xorg packages that may be needed: xlip libxft libxinerama flameshot discord
     
     # Nvidia Drivers
     sudo pacman -Sy --noconfirm base-devel linux-headers nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
@@ -89,10 +89,10 @@ if [[ $input == "Y" || $input == "y" ]]; then
     sudo pacman -Sy --noconfirm hyprland dunst dolphin wofi xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent waybar
 
     # Staple packages
-    sudo pacman -Sy --noconfirm neovim vi bash-completion steam alacritty redshift keepassxc mpv archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji neofetch ranger dunst firefox unrar unzip xz lxappearance ueberzug openssh discord obs-studio htop p7zip ripgrep fuse lazygit
+    sudo pacman -Sy --noconfirm neovim vi bash-completion steam alacritty redshift keepassxc mpv archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji neofetch ranger dunst firefox unrar unzip xz lxappearance ueberzug openssh obs-studio htop p7zip ripgrep fuse lazygit
 
     ## AUR packages
-    yay -Sy nsxiv game-devices-udev autojump
+    yay -Sy nsxiv game-devices-udev autojump webcord-git
 fi
 
 # Recovering files from github
