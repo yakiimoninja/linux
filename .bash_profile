@@ -11,5 +11,5 @@ if [ -d "$HOME/Downloads/platform-tools" ] ; then
  export PATH="$HOME/Downloads/platform-tools:$PATH"
 fi
 
-# Starting display server
-startx
+# Starting window manager
+Hyprland
