@@ -1,0 +1,11 @@
+dolphin
+dunst
+hyprland
+hyprlock
+polkit-kde-agent
+qt5-wayland
+qt6-wayland
+swaybg
+waybar
+wofi
+xdg-desktop-portal-hyprland

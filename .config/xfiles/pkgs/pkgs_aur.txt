@@ -1,0 +1,4 @@
+autopjump
+game-devices-udev
+hyprshade
+webcord-git

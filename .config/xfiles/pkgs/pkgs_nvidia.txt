@@ -1,0 +1,6 @@
+base-devel
+linux-headers
+lib32-nvidia-utils
+nvidia-dkms
+nvidia-settings
+nvidia-utils
