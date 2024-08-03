@@ -64,34 +64,40 @@ button:hover {
 
 #memory {
     color: #a9b665;
+    font-weight: bolder;
     padding: 0 0.3em;
 }
 
-#pulseaudio {
+#wireplumber {
     margin: 0;
     padding: 0 0.5em 0 0.4em;
     color: #d8a657;
+    font-weight: bolder;
 }
 
 #cpu {
     margin: 0;
     padding: 0 0.1em 0 0.1em;
     color: #a9b665;
+    font-weight: bolder;
 }
 
 #network {
     margin: 0;
     padding: 0 0.4em 0 0.5em;
     color: #d8a657;
+    font-weight: bolder;
 }
 
 #language {
     margin: 0;
     padding: 0 0.1em;
     color: #d3869b;
+    font-weight: bolder;
 }
 #tray {
     margin: 0;
     padding: 0 0.2em;
     color: #d3869b;
+    font-weight: bolder;
 }
