@@ -59,11 +59,13 @@ echo ""
 echo "Install and sort mirrorlist with reflector? [y/n]"
 read input
 if [[ $input == "Y" || $input == "y" ]]; then
+    # Updating keyrings
+    sudo pacman -Sy --noconfirm archlinux-keyring
     sudo pacman -Sy reflector --noconfirm
     sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist --protocol https --download-timeout 15
 fi
 
-# Installing AUR and YAY
+# Installing AUR helper YAY
 echo ""
 echo "Enable AUR and download YAY [y/n]"
 read input
@@ -73,26 +75,6 @@ if [[ $input == "Y" || $input == "y" ]]; then
     makepkg -si
     cd $HOME
     rm -rf /tmp/yay/
-fi
-
-# Downloading software
-echo ""
-echo "Install packages? [y/n]"
-read input
-if [[ $input == "Y" || $input == "y" ]]; then 
-    # Xorg packages that may be needed: xlip libxft libxinerama flameshot discord redshift
-    
-    # Nvidia Drivers
-    sudo pacman -Sy --noconfirm base-devel linux-headers nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
-
-    # Hyprland
-    sudo pacman -Sy --noconfirm hyprland dunst dolphin wofi xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent waybar hyprlock swaybg
-
-    # Staple packages
-    sudo pacman -Sy --noconfirm neovim vi bash-completion steam alacritty keepassxc mpv archlinux-keyring adobe-source-han-sans-jp-fonts noto-fonts-emoji neofetch ranger dunst firefox unrar unzip xz lxappearance ueberzug openssh obs-studio htop p7zip ripgrep fuse lazygit udiskie pavucontrol
-
-    ## AUR packages
-    yay -Sy nsxiv game-devices-udev autojump webcord-git hyprshade
 fi
 
 # Recovering files from github
@@ -112,6 +94,26 @@ if [[ $input == "Y" || $input == "y" ]]; then
 
     # Seperate nvim config
     git clone https://github.com/yakiimoninja/nvim $HOME/.config/
+fi
+
+# Downloading software
+echo ""
+echo "Install packages? [y/n]"
+read input
+if [[ $input == "Y" || $input == "y" ]]; then 
+    # Xorg packages that may be needed: xlip libxft libxinerama flameshot discord redshift
+    
+    # Updating keyrings
+    sudo pacman -Sy --noconfirm archlinux-keyring
+    # Nvidiscorda Drivers
+    sudo pacman -Sy --noconfirm --needed - < $HOME/.config/xfiles/pkgs/pkgs_nvidia.txt
+    # Hyprland
+    sudo pacman -S --noconfirm --needed - < $HOME/.config/xfiles/pkgs/pkgs_hyprland.txt
+    # Staple packages
+    sudo pacman -S --noconfirm --needed - < $HOME/.config/xfiles/pkgs/staple.txt
+    
+    ## AUR packages
+    yay -Sy --noconfirm --needed - < $HOME/.config/xfiles/pkgs/pkgs_aur.txt
 fi
 
 # Downloading rust tools
