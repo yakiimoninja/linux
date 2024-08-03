@@ -1,68 +1,82 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height":35 ,// Waybar height (to be removed for auto height)
+    "height":38 ,// Waybar height (to be removed for auto height)
     "margin": 0, 
     //"width": 1920, // Waybar width
-    "spacing": 0,
+    "spacing": 5,
     "fixed-center": true, 
+    
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces",],
-    "modules-right": ["memory","cpu","pulseaudio","hyprland/language","tray"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
+    "modules-right": ["group/stats"],
+    //,"memory","cpu","wireplumber","hyprland/language","tray"],
+
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-active": "{icon}",
         "on-click": "activate",
     },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 4,
-        "show-passive-items": true,
-        "max-length": 6,
-        "min-length": 6,
+
+    "group/stats": {
+        "orientation": "horizontal",
+        "modules": ["tray","memory","cpu","wireplumber","hyprland/language"]
     },
-    "hyprland/language": {
-    "format-en": "US",
-    "format-gr": "GR",
-    "format": " {}",
-    "keyboard-name": "kbdfans-kbd67mkiirgbv3-keyboard",
-    "max-length": 5,
-    "min-length": 5,
-    "on-click": "hyprctl switchxkblayout kbdfans-kbd67mkiirgbv3-keyboard next"
-    },
+
     "clock": {
         "tooltip": false,
         "interval": 60,
-       "format": "{:%a - %d - %H:%M}",
-        "max-length": 25,},
+       "format": "{:%H:%M  %a %d %b}",
+        "max-length": 25,
         //"on-click": "alacritty  --class calendar -e calcure"},
+    },
+
+    "memory": {
+        "format":"   {percentage}%",
+        "interval": 1,
+        "on-click": "alacritty --class system_monitor -e htop",
+        "max-lenght": 25,
+        "min-length":6,
+    },
+
     "cpu": {
         "interval":1,
-        "format":"{icon0}{icon1}{icon2}{icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "on-click": "alacritty --class system_monitor -e btop",
+        "format":"{usage}",
+        "on-click": "alacritty --class system_monitor -e htop",
         "max-lenght": 25,
         "min-length":6,
     },
-    "memory": {
-        "format":" {percentage}%",
-        "interval": 1,
-        "on-click": "alacritty --class system_monitor -e btop",
-        "max-lenght": 25,
-        "min-length":6,
-    },
-    "pulseaudio": {
+
+    "wireplumber": {
     "format": "蓼 {volume}%",
     "format-bluetooth": " {volume}%",
     "scroll-step": 1,
     "on-click-right": "pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"],
-    "max-lenght": 25,
+    //"max-lenght": 25,
     "exec":"pactl --format=json list sinks | jq -cM --unbuffered \"map(select(.name == \\\"$(pactl get-default-sink)\\\"))[0].properties | [.\\\"media.name\\\",.\\\"alsa.name\\\",.\\\"node.nick\\\",.\\\"alsa.long_card_name\\\"] | map(select(length>0))[0] | {text:.}\"",
     "exec-if": "sleep 0.1", // Give enough time for `pactl get-default-sink` to update
     "on-click": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink"
-}
+    },
+
+    "hyprland/language": {
+    "format-en": "US",
+    "format-gr": "GR",
+    "format": " {}",
+    "keyboard-name": "kbdfans-kbd67mkiirgbv3-keyboard",
+    //"max-length": 5,
+    "min-length": 5,
+    "on-click": "hyprctl switchxkblayout kbdfans-kbd67mkiirgbv3-keyboard next"
+    },
+    
+    "tray": {
+        //"icon-size": 21,
+        "spacing": 5,
+        "show-passive-items": true,
+        //"max-length": 6,
+        "min-length": 6,
+    },
 }
 
