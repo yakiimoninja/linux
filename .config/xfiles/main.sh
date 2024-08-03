@@ -129,19 +129,19 @@ echo ""
 echo "Copy system conf files? [y/n]"
 read input
 if [[ $input == "Y" || $input == "y" ]]; then 
-    sudo cp $HOME/.config/xfiles/00-keyboard.conf /etc/X11/xorg.conf.d/
-    sudo cp $HOME/.config/xfiles/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
-    sudo cp $HOME/.config/xfiles/blacklist.conf /etc/modprobe.d/
-    sudo cp $HOME/.config/xfiles/xorg.conf /etc/X11/
-    sudo cp $HOME/.config/xfiles/sudoers /etc/
-    sudo cp $HOME/.config/xfiles/pgame /bin/
-    sudo cp $HOME/.config/xfiles/pstart /bin/
-    sudo cp $HOME/.config/xfiles/pstop /bin/
+    sudo cp $HOME/.config/xfiles/configs/00-keyboard.conf /etc/X11/xorg.conf.d/
+    sudo cp $HOME/.config/xfiles/configs/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+    sudo cp $HOME/.config/xfiles/configs/blacklist.conf /etc/modprobe.d/
+    sudo cp $HOME/.config/xfiles/configs/xorg.conf /etc/X11/
+    sudo cp $HOME/.config/xfiles/configs/sudoers /etc/
+    sudo cp $HOME/.config/xfiles/scripts/pgame /bin/
+    sudo cp $HOME/.config/xfiles/scripts/pstart /bin/
+    sudo cp $HOME/.config/xfiles/scripts/pstop /bin/
     
     # Nvidia Hyprland
-    sudo cp $HOME/.config/xfiles/mkinitcpio.conf /etc/mkinitcpio.conf
-    sudo cp $HOME/.config/xfiles/grub /etc/default/
-    sudo cp $HOME/.config/xfiles/nvidia.conf /etc/modprobe.d/nvidia.conf
+    sudo cp $HOME/.config/xfiles/configs/mkinitcpio.conf /etc/mkinitcpio.conf
+    sudo cp $HOME/.config/xfiles/configs/grub /etc/default/
+    sudo cp $HOME/.config/xfiles/configs/nvidia.conf /etc/modprobe.d/nvidia.conf
 
     echo ""
     echo "Making grub config."
