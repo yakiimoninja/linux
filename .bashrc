@@ -2,6 +2,9 @@
 # ~/.bashrc
 #\u@\h
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 _set_my_PS1() {
     PS1=' \[\e[35m\]\W\[\e[m\] ❯ '
     if [ "$(whoami)" = "liveuser" ] ; then
@@ -89,3 +92,4 @@ set -o vi
 
 # Disable ctrl-s pause
 stty -ixon
+
