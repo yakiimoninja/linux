@@ -48,11 +48,15 @@ if [[ ! -d "$HOME/code" && ! -d "$HOME/Code" ]]; then
 else
     echo "Code folder exists."
 fi
-    
+
+########################################################
+
 # Setting volume
 echo ""
 echo "Set volume to 0.70."
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.70
+
+########################################################
 
 # Setting mirrorlist
 echo ""
@@ -65,6 +69,8 @@ if [[ $input == "Y" || $input == "y" ]]; then
     sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist --protocol https --download-timeout 15
 fi
 
+########################################################
+
 # Installing AUR helper YAY
 echo ""
 echo "Enable AUR and download YAY [y/n]"
@@ -76,6 +82,8 @@ if [[ $input == "Y" || $input == "y" ]]; then
     cd $HOME
     rm -rf /tmp/yay/
 fi
+
+########################################################
 
 # Recovering files from github
 echo ""
@@ -95,6 +103,8 @@ if [[ $input == "Y" || $input == "y" ]]; then
     # Seperate nvim config
     git clone https://github.com/yakiimoninja/nvim $HOME/.config/
 fi
+
+########################################################
 
 # Downloading software
 echo ""
@@ -116,6 +126,8 @@ if [[ $input == "Y" || $input == "y" ]]; then
     yay -Sy --noconfirm --needed - < $HOME/.config/xfiles/pkgs/pkgs_aur.txt
 fi
 
+########################################################
+
 # Downloading rust tools
 echo ""
 echo "Install Rust Tools? [y/n]"
@@ -123,6 +135,8 @@ read input
 if [[ $input == "Y" || $input == "y" ]]; then 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
+
+########################################################
 
 # Copying xfiles
 echo ""
@@ -153,6 +167,8 @@ if [[ $input == "Y" || $input == "y" ]]; then
     
 fi
 
+########################################################
+
 # Disabling hibernation/sleep etc
 echo ""
 echo "Disable hibernation/sleep etc.? [y/n]"
@@ -161,8 +177,11 @@ if [[ $input == "Y" || $input == "y" ]]; then
     sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 fi
 
+########################################################
+
 echo ""
 echo "Done."
 echo "Please reboot."
 # Uncomment to enable hibernation/sleep etc
 #sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
