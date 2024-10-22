@@ -1,4 +1,4 @@
-import = ["/home/potatoninja/.config/alacritty/gruvbox.toml"]
+import = ["/home/potato/.config/alacritty/gruvbox.toml"]
 
 [font]
 size = 12.0
@@ -22,3 +22,7 @@ style = "Regular"
 [font.offset]
 x = 0
 y = 0
+
+[window.dimensions]
+columns = 100
+lines = 25
