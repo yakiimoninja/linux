@@ -93,3 +93,5 @@ set -o vi
 # Disable ctrl-s pause
 stty -ixon
 
+# Directory spell check
+shopt -s cdspell
