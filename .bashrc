@@ -69,7 +69,7 @@ alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles exce
 alias vim='nvim'
 alias nv='nvim'
 alias v='nvim'
-alias r='ranger'
+alias e='yazi'
 alias sudo='sudo '
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lg='lazygit'
