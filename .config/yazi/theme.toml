@@ -1,0 +1,6 @@
+[manager]
+border_symbol = " "
+#find_position = { fg = "black", bg = "lightcyan"}
+#tab_active = { fg = "black", bg = "lightcyan"}
+#hovered = { fg = "black", bg = "lightcyan"}
+preview_hovered = { underline = false }
