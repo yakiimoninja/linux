@@ -40,9 +40,9 @@ else
     echo "Music folder exists."
 fi
 
-if [[ ! -d "$HOME/code" && ! -d "$HOME/Code" ]]; then
-    echo "Creating code folder."
-    mkdir $HOME/code 
+if [[ ! -d "$HOME/dev" && ! -d "$HOME/Dev" ]]; then
+    echo "Creating Dev folder."
+    mkdir $HOME/dev
 else
-    echo "Code folder exists."
+    echo "Dev folder exists."
 fi
