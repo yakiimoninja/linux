@@ -6,43 +6,43 @@ echo "Checking for home directories."
 echo ""
 
 if [[ ! -d "$HOME/documents" && ! -d "$HOME/Documents" ]]; then
-    echo "Creating documents folder."
+    echo "Creating documents directory."
     mkdir $HOME/Documents
 else
-    echo "Documents folder exists."
+    echo "Documents directory exists."
 fi
 
 if [[ ! -d "$HOME/downloads" && ! -d "$HOME/Downloads" ]]; then
-    echo "Creating downloads folder."
+    echo "Creating downloads directory."
     mkdir $HOME/Downloads 
 else
-    echo "Downloads folder exists."
+    echo "Downloads directory exists."
 fi
 
 if [[ ! -d "$HOME/pictures" && ! -d "$HOME/Pictures" ]]; then 
-        echo "Creating pictures folder."
+        echo "Creating pictures directory."
         mkdir $HOME/Pictures
 else
-    echo "Pictures folder exists."
+    echo "Pictures directory exists."
 fi
 
 if [[ ! -d "$HOME/videos" && ! -d "$HOME/Videos" ]]; then
-    echo "Creating videos folder."
+    echo "Creating videos directory."
     mkdir $HOME/Videos 
 else
-    echo "Videos folder exists."
+    echo "Videos directory exists."
 fi
 
 if [[ ! -d "$HOME/music" && ! -d "$HOME/Music" ]]; then
-    echo "Creating music folder."
+    echo "Creating music directory."
     mkdir $HOME/Music 
 else
-    echo "Music folder exists."
+    echo "Music directory exists."
 fi
 
 if [[ ! -d "$HOME/dev" && ! -d "$HOME/Dev" ]]; then
-    echo "Creating Dev folder."
+    echo "Creating Dev directory."
     mkdir $HOME/dev
 else
-    echo "Dev folder exists."
+    echo "Dev directory exists."
 fi
