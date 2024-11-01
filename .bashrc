@@ -82,9 +82,6 @@ alias cr='cargo r -r'
 # Rust enviroment entry
 . "$HOME/.cargo/env"
 
-# Raner env entry
-RANGER_LOAD_DEFAULT_RC="FALSE"
-
 export EDITOR='nvim'
 export VISUAL='nvim'
 
