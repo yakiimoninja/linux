@@ -1,6 +1,10 @@
 [manager]
-border_symbol = " "
+#cwd = { fg = "white", bold = true }
 #find_position = { fg = "black", bg = "lightcyan"}
-#tab_active = { fg = "black", bg = "lightcyan"}
-#hovered = { fg = "black", bg = "lightcyan"}
+#mode_normal = { fg = "black", bg = "black"}
+#hovered = { bold = true, reversed = true }
+border_symbol = " "
 preview_hovered = { underline = false }
+
+[flavor]
+use = "gruvbox-dark"
