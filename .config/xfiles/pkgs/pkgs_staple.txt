@@ -19,7 +19,6 @@ openssh
 p7zip
 pavucontrol
 qbittorrent
-ranger
 ripgrep
 steam
 ttf-hack-nerd
@@ -29,3 +28,4 @@ unrar
 unzip
 vi
 xz
+yazi
