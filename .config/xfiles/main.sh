@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# TODO START HYPRLAND WITH SYSTEMCTL
+# https://superuser.com/questions/1017959/how-to-know-if-i-am-using-systemd-on-linux
 #https://www.atlassian.com/git/tutorials/dotfiles
 
 # Making scripts executable
