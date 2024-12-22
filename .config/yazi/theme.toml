@@ -7,4 +7,4 @@ border_symbol = " "
 preview_hovered = { underline = false }
 
 [flavor]
-use = "gruvbox-dark"
+dark = "gruvbox-dark"
