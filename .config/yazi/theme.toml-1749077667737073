@@ -1,4 +1,4 @@
-[mgr]
+[manager]
 #cwd = { fg = "white", bold = true }
 #find_position = { fg = "black", bg = "lightcyan"}
 #mode_normal = { fg = "black", bg = "black"}
